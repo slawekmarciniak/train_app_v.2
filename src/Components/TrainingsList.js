@@ -23,7 +23,7 @@ const TrainingList = (props) => {
 
   return (
     <>
-      <h4>coming trainings</h4>
+      <h4>coming workouts:</h4>
       <table className="table table-hover">
         <thead>
           <tr>
@@ -37,7 +37,7 @@ const TrainingList = (props) => {
         {activeList}
       </table>
 
-      <h4>finished trainings:</h4>
+      <h4>finished workouts:</h4>
       <table className="table table-hover">
         <thead>
           <tr>
