@@ -29,11 +29,20 @@ class AddTraining extends Component {
 
             {/* duration */}
 
-            <div className="col-2 duration">
+            <div className="col-1 duration">
               <input
                 type="number"
                 className="form-control duration"
-                placeholder="minutes"
+                placeholder="h"
+                aria-label="workout type"
+              />
+            </div>
+
+            <div className="col-1 duration">
+              <input
+                type="number"
+                className="form-control duration"
+                placeholder="m"
                 aria-label="workout type"
               />
             </div>
