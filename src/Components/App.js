@@ -96,7 +96,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h2>Ultran Train App - be faster :)</h2>
+        <h2>Ultran Training App</h2>
         <hr />
         <AddTraining />
         <hr />

@@ -2,13 +2,11 @@ import React, { Component } from "react";
 
 class AddTraining extends Component {
   state = {
-    id: 0,
-    type: "running",
-    description: "easy run",
+    type: "",
+    description: "",
     date: "2021-08-20",
-    duration: 100,
-    importand: true,
-    finished: false,
+    duration: "",
+    importand: false,
   };
   render() {
     return (
@@ -20,7 +18,7 @@ class AddTraining extends Component {
 
         <div className="form">
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <input
                 type="text"
                 className="form-control"
@@ -29,9 +27,20 @@ class AddTraining extends Component {
               />
             </div>
 
+            {/* duration */}
+
+            <div className="col-2 duration">
+              <input
+                type="number"
+                className="form-control duration"
+                placeholder="minutes"
+                aria-label="workout type"
+              />
+            </div>
+
             {/* date */}
 
-            <div className="col">
+            <div className="col-4">
               <input
                 type="date"
                 className="form-control"
