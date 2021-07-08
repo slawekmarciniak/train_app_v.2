@@ -4,7 +4,7 @@ In this project I create app scaffold.
 
 My target is to build CRUD functionality for training plan.
 
-Next i would like to separate moduls of my App into different routes using React Router.
+Next i would like to separate views of my App into different routes using React Router.
 
 I will add navbar, and basics bootstrap styles.
 

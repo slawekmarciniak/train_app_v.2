@@ -96,7 +96,6 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <hr />
         <AddTraining />
         <hr />
         <TrainingsList

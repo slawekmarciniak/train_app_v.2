@@ -1,12 +1,29 @@
 import React, { Component } from "react";
 
 class AddTraining extends Component {
+  date = new Date().toISOString().slice(0, 10);
   state = {
     type: "",
     description: "",
-    date: "2021-08-20",
-    duration: "",
-    importand: false,
+    date: this.date,
+    minutes: "",
+    hours: "",
+    important: false,
+  };
+
+  handleInputsChange = (e) => {
+    console.log("halo");
+    const name = e.target.name;
+
+    if (name === "important") {
+      this.setState({
+        [name]: !this.state.important,
+      });
+    } else {
+      this.setState({
+        [name]: e.target.value,
+      });
+    }
   };
   render() {
     return (
@@ -20,10 +37,13 @@ class AddTraining extends Component {
           <div className="row">
             <div className="col-6">
               <input
+                name="type"
+                onChange={this.handleInputsChange}
                 type="text"
                 className="form-control"
                 placeholder="workout type"
                 aria-label="workout type"
+                value={this.state.type}
               />
             </div>
 
@@ -31,19 +51,28 @@ class AddTraining extends Component {
 
             <div className="col-1 duration">
               <input
+                name="hours"
                 type="number"
                 className="form-control duration"
                 placeholder="h"
                 aria-label="workout type"
+                min="0"
+                value={this.state.hours}
+                onChange={this.handleInputsChange}
               />
             </div>
 
             <div className="col-1 duration">
               <input
+                name="minutes"
                 type="number"
                 className="form-control duration"
                 placeholder="m"
                 aria-label="workout type"
+                min="0"
+                max="60"
+                value={this.state.minutes}
+                onChange={this.handleInputsChange}
               />
             </div>
 
@@ -51,10 +80,13 @@ class AddTraining extends Component {
 
             <div className="col-4">
               <input
+                name="date"
+                value={this.state.date}
                 type="date"
                 className="form-control"
                 placeholder="Last name"
                 aria-label="Last name"
+                onChange={this.handleInputsChange}
               />
             </div>
           </div>
@@ -66,9 +98,12 @@ class AddTraining extends Component {
           <div className="row">
             <div className="form-floating descriptionInput col">
               <textarea
+                name="description"
+                value={this.state.description}
                 className="form-control"
                 placeholder="Leave a comment here"
                 id="floatingTextarea"
+                onChange={this.handleInputsChange}
               ></textarea>
               <label className="detailsLabel" htmlFor="floatingTextarea">
                 training details
@@ -79,9 +114,12 @@ class AddTraining extends Component {
 
             <div className="form-check form-switch col">
               <input
+                name="important"
+                value={this.state.important}
                 className="form-check-input"
                 type="checkbox"
                 id="flexSwitchCheckDefault"
+                onChange={this.handleInputsChange}
               />
               <label
                 className="form-check-label"
