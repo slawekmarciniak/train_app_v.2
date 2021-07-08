@@ -4,6 +4,8 @@ import AddTraining from "./AddTraining";
 import "./App.css";
 
 class App extends Component {
+  idNumber = 10;
+
   state = {
     trainings: [
       {
@@ -72,6 +74,26 @@ class App extends Component {
     ],
   };
 
+  addTraining = (training) => {
+    const { type, description, date, minutes, hours, important } = training;
+    const newTraining = {
+      id: this.idNumber,
+      type,
+      description,
+      date,
+      duration: `${hours} h : ${minutes} m`,
+      important,
+      finished: false,
+    };
+
+    this.setState((prevState) => ({
+      trainings: [...prevState.trainings, newTraining],
+    }));
+
+    this.idNumber++;
+    return true;
+  };
+
   handleCompleteButton = (id) => {
     let trainings = this.state.trainings;
     trainings.forEach((training) => {
@@ -96,7 +118,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <AddTraining />
+        <AddTraining addTraining={this.addTraining} />
         <hr />
         <TrainingsList
           list={this.state.trainings}

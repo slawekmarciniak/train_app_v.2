@@ -25,6 +25,21 @@ class AddTraining extends Component {
       });
     }
   };
+
+  handleFormButton = () => {
+    const addTraining = this.props.addTraining(this.state);
+    if (addTraining === true) {
+      this.setState({
+        type: "",
+        description: "",
+        date: this.date,
+        minutes: "",
+        hours: "",
+        important: false,
+      });
+    }
+  };
+
   render() {
     return (
       <div>
@@ -131,7 +146,11 @@ class AddTraining extends Component {
           </div>
         </div>
         <br />
-        <button type="button" className="btn btn-info">
+        <button
+          onClick={this.handleFormButton}
+          type="button"
+          className="btn btn-info"
+        >
           add training
         </button>
       </div>
