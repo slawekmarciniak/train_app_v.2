@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TrainingsList from "./TrainingsList";
 import AddTraining from "./AddTraining";
+import Navbar from "./Navbar";
 import "./App.css";
 
 class App extends Component {
@@ -118,6 +119,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+        <Navbar />
         <AddTraining addTraining={this.addTraining} />
         <hr />
         <TrainingsList

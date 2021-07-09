@@ -1,5 +1,5 @@
 const Training = (props) => {
-  const { id, type, description, date, duration, important } = props.training;
+  const { id, type, description, date, duration } = props.training;
 
   return (
     <tbody>

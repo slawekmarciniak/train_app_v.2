@@ -12,7 +12,6 @@ class AddTraining extends Component {
   };
 
   handleInputsChange = (e) => {
-    console.log("halo");
     const name = e.target.name;
 
     if (name === "important") {
@@ -26,17 +25,27 @@ class AddTraining extends Component {
     }
   };
 
+  formValidation = () => {
+    const { type, description, minutes, hours } = this.state;
+    if (type && description && minutes && hours) {
+      return true;
+    }
+  };
+
   handleFormButton = () => {
-    const addTraining = this.props.addTraining(this.state);
-    if (addTraining === true) {
-      this.setState({
-        type: "",
-        description: "",
-        date: this.date,
-        minutes: "",
-        hours: "",
-        important: false,
-      });
+    const validation = this.formValidation();
+    if (validation) {
+      const addTraining = this.props.addTraining(this.state);
+      if (addTraining === true) {
+        this.setState({
+          type: "",
+          description: "",
+          date: this.date,
+          minutes: "",
+          hours: "",
+          important: false,
+        });
+      }
     }
   };
 
@@ -45,10 +54,7 @@ class AddTraining extends Component {
       <div>
         <h2>new training</h2>
         <br />
-
-        {/* workout type */}
-
-        <div className="form">
+        <form>
           <div className="row">
             <div className="col-6">
               <input
@@ -59,6 +65,7 @@ class AddTraining extends Component {
                 placeholder="workout type"
                 aria-label="workout type"
                 value={this.state.type}
+                required
               />
             </div>
 
@@ -74,6 +81,7 @@ class AddTraining extends Component {
                 min="0"
                 value={this.state.hours}
                 onChange={this.handleInputsChange}
+                required
               />
             </div>
 
@@ -88,6 +96,7 @@ class AddTraining extends Component {
                 max="60"
                 value={this.state.minutes}
                 onChange={this.handleInputsChange}
+                required
               />
             </div>
 
@@ -99,8 +108,7 @@ class AddTraining extends Component {
                 value={this.state.date}
                 type="date"
                 className="form-control"
-                placeholder="Last name"
-                aria-label="Last name"
+                aria-label="date"
                 onChange={this.handleInputsChange}
               />
             </div>
@@ -119,6 +127,7 @@ class AddTraining extends Component {
                 placeholder="Leave a comment here"
                 id="floatingTextarea"
                 onChange={this.handleInputsChange}
+                required
               ></textarea>
               <label className="detailsLabel" htmlFor="floatingTextarea">
                 training details
@@ -144,15 +153,16 @@ class AddTraining extends Component {
               </label>
             </div>
           </div>
-        </div>
+          <br />
+          <button
+            onClick={this.handleFormButton}
+            type="submit"
+            className="btn btn-info"
+          >
+            add training
+          </button>
+        </form>
         <br />
-        <button
-          onClick={this.handleFormButton}
-          type="button"
-          className="btn btn-info"
-        >
-          add training
-        </button>
       </div>
     );
   }
