@@ -2,7 +2,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="./">
           Navbar
         </a>
         <button
@@ -24,19 +24,19 @@ const Navbar = () => {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="./">
                 Features
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="./">
                 Pricing
               </a>
             </li>
             <li className="nav-item">
               <a
                 className="nav-link disabled"
-                href="#"
+                href="./"
                 tabindex="-1"
                 aria-disabled="true"
               >
