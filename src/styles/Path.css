@@ -1,0 +1,11 @@
+.path {
+    height: 25px;
+}
+
+.path p {
+    font-size: 12px;
+    font-style: italic;
+    margin-left: 10px;
+    color: cadetblue;
+
+}

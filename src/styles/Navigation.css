@@ -1,0 +1,25 @@
+nav.mainNav {
+   
+    min-width: 280px;
+    padding: 10px;
+}
+
+nav.mainNav ul {
+    list-style: none;
+}
+
+nav.mainNav li a {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 0;
+    color: #333;
+    transition: .3s;
+}
+
+nav.mainNav li a:hover {
+    transform: translateX(20px);
+}
+
+
+

@@ -1,8 +1,16 @@
 import React, { Component } from "react";
-import TrainingsList from "./TrainingsList";
-import AddTraining from "./AddTraining";
-import Navbar from "./Navbar";
-import "./App.css";
+
+import { BrowserRouter as Router } from "react-router-dom";
+
+// import TrainingsList from "../Components/TrainingsList";
+// import AddTraining from "../Components/AddTraining";
+
+import Header from "./Header";
+import Path from "./Path";
+import Navigation from "./Navigation";
+import Page from "./Page";
+import Footer from "./Footer";
+import "../styles/App.css";
 
 class App extends Component {
   idNumber = 10;
@@ -118,19 +126,45 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Navbar />
-        <AddTraining addTraining={this.addTraining} />
-        <hr />
-        <TrainingsList
+      <Router>
+        <div className="app">
+          <header>
+            <Header />
+          </header>
+          <section className="path">
+            <Path />
+          </section>
+          <main>
+            <aside>
+              <Navigation />
+            </aside>
+            <section className="page">
+              <Page />
+            </section>
+          </main>
+          <footer>
+            <Footer />
+          </footer>
+
+          {/* <AddTraining addTraining={this.addTraining} /> */}
+
+          {/* <TrainingsList
           list={this.state.trainings}
           complete={this.handleCompleteButton}
           delete={this.handleDeleteButton}
-        />
-        <hr />
-      </div>
+        /> */}
+        </div>
+      </Router>
     );
   }
 }
 
 export default App;
+
+/* <AddTraining addTraining={this.addTraining} /> */
+
+/* <TrainingsList
+          list={this.state.trainings}
+          complete={this.handleCompleteButton}
+          delete={this.handleDeleteButton}
+        /> */
