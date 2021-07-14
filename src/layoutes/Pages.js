@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import AddWorkout from "../pages/AddWorkout";
 import TrainingList from "../pages/TrainingList";
 import Training from "../Components/Training";
+import History from "../pages/History";
 
 class Pages extends Component {
   idNumber = 10;
@@ -143,6 +144,18 @@ class Pages extends Component {
             exact
             render={() => (
               <TrainingList
+                list={this.state.trainings}
+                complete={this.handleCompleteButton}
+                delete={this.handleDeleteButton}
+              />
+            )}
+          />
+
+          <Route
+            path="/train_app_v.1/history"
+            exact
+            render={() => (
+              <History
                 list={this.state.trainings}
                 complete={this.handleCompleteButton}
                 delete={this.handleDeleteButton}

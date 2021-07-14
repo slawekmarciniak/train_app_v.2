@@ -1,9 +1,9 @@
 import Training from "../Components/Training";
 
-const TrainingList = (props) => {
-  const active = props.list.filter((training) => !training.finished);
+const History = (props) => {
+  const finished = props.list.filter((training) => training.finished);
 
-  const activeList = active.map((training) => (
+  const finishedList = finished.map((training) => (
     <Training
       key={training.id}
       training={training}
@@ -14,7 +14,7 @@ const TrainingList = (props) => {
 
   return (
     <>
-      <h4>coming workouts:</h4>
+      <h4>finished workouts:</h4>
       <table className="table table-hover">
         <thead>
           <tr>
@@ -25,10 +25,10 @@ const TrainingList = (props) => {
             <th>action</th>
           </tr>
         </thead>
-        {activeList}
+        {finishedList}
       </table>
     </>
   );
 };
 
-export default TrainingList;
+export default History;

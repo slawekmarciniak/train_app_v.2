@@ -1,0 +1,16 @@
+
+footer {
+    height: 30px;
+    background-color: rgb(68, 68, 68);
+    color: rgb(197, 196, 196);
+}
+
+
+footer p {
+    text-align: center;
+    line-height: 30px;
+}
+
+.peace {
+    font-size: 20px;
+}
