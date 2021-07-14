@@ -17,6 +17,8 @@ const Training = (props) => {
           >
             complete
           </button>
+        </td>
+        <td>
           <button
             onClick={() => {
               props.delete(id);

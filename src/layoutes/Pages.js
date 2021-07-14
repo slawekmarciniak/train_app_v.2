@@ -5,9 +5,11 @@ import AddWorkout from "../pages/AddWorkout";
 import TrainingList from "../pages/TrainingList";
 import Training from "../Components/Training";
 import History from "../pages/History";
+import "../styles/Pages.css";
 
 class Pages extends Component {
   idNumber = 10;
+  date = new Date().toISOString().slice(0, 10);
 
   state = {
     trainings: [
@@ -32,9 +34,9 @@ class Pages extends Component {
       {
         id: 2,
         type: "running",
-        description: "easy run",
-        date: "2021-08-20",
-        duration: 100,
+        description: "easy run - enjoy workout",
+        date: this.date,
+        duration: 30,
         importand: true,
         finished: false,
       },
@@ -120,13 +122,13 @@ class Pages extends Component {
 
   render() {
     return (
-      <div>
+      <div className="pagesContainer">
         <Switch>
           <Route
             path="/train_app_v.1/"
             exact
             render={() => (
-              <TrainingList
+              <Home
                 list={this.state.trainings}
                 complete={this.handleCompleteButton}
                 delete={this.handleDeleteButton}

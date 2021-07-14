@@ -14,7 +14,7 @@ const History = (props) => {
 
   return (
     <>
-      <h4>finished workouts:</h4>
+      <h5 className="pageHeader">finished workouts:</h5>
       <table className="table table-hover">
         <thead>
           <tr>
@@ -22,7 +22,9 @@ const History = (props) => {
             <th>description</th>
             <th>duration</th>
             <th>date</th>
-            <th>action</th>
+            <th></th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         {finishedList}

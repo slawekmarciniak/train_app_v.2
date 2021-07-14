@@ -16,7 +16,7 @@ const Header = () => {
         <Route
           path="/train_app_v.1/"
           exact
-          render={() => <img src={header1} alt="sport"></img>}
+          render={() => <img src={header6} alt="sport"></img>}
         />
 
         <Route
@@ -33,7 +33,7 @@ const Header = () => {
         />
         <Route
           path="/train_app_v.1/contact"
-          render={() => <img src={header6} alt="sport"></img>}
+          render={() => <img src={header1} alt="sport"></img>}
         />
         <Route
           path="/train_app_v.1/admin"

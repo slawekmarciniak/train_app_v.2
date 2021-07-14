@@ -1,0 +1,22 @@
+
+
+section.page {
+    flex-grow: 1;
+}
+
+
+.pagesContainer {
+    padding-right: 40px;
+    padding-top: 10px;
+}
+
+p.quote {
+    font-style: italic;
+    font-size: 12px;
+}
+
+.pageHeader {
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+

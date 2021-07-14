@@ -52,7 +52,7 @@ class AddWorkout extends Component {
   render() {
     return (
       <div>
-        <h2>new training</h2>
+        <h5 className="pageHeader">new training</h5>
         <br />
         <form>
           <div className="row">
