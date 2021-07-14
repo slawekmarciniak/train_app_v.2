@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class AddTraining extends Component {
+class AddWorkout extends Component {
   date = new Date().toISOString().slice(0, 10);
   state = {
     type: "",
@@ -168,4 +168,4 @@ class AddTraining extends Component {
   }
 }
 
-export default AddTraining;
+export default AddWorkout;

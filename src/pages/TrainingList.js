@@ -1,4 +1,4 @@
-import Training from "./Training";
+import Training from "../Components/Training";
 
 const TrainingList = (props) => {
   const active = props.list.filter((training) => !training.finished);
