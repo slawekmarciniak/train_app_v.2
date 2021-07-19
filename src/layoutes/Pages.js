@@ -88,7 +88,7 @@ const Pages = () => {
       finished: false,
     };
 
-    setTrainingsList((prevState) => [...prevState.trainings, newTraining]);
+    setTrainingsList((prevState) => [...prevState, newTraining]);
 
     idNumber++;
     return true;
@@ -129,7 +129,7 @@ const Pages = () => {
         <Route
           path="/train_app_v.1/add_workout"
           exact
-          render={() => <AddWorkout addTraining={addTraining} />}
+          render={() => <AddWorkout addNewTraining={addTraining} />}
         />
         <Route
           path="/train_app_v.1/training_list"
