@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "../pages/Home";
 import AddWorkout from "../pages/AddWorkout";
@@ -7,82 +7,79 @@ import Training from "../Components/Training";
 import History from "../pages/History";
 import "../styles/Pages.css";
 
-class Pages extends Component {
-  idNumber = 10;
-  date = new Date().toISOString().slice(0, 10);
+const defaultTrainings = [
+  {
+    id: 0,
+    type: "running",
+    description: "easy run",
+    date: "2021-08-20",
+    duration: 100,
+    importand: true,
+    finished: false,
+  },
+  {
+    id: 1,
+    type: "running",
+    description: "easy run",
+    date: "2021-08-20",
+    duration: 100,
+    importand: true,
+    finished: false,
+  },
+  {
+    id: 2,
+    type: "running",
+    description: "easy run - enjoy workout",
+    date: new Date().toISOString().slice(0, 10),
+    duration: 30,
+    importand: true,
+    finished: false,
+  },
+  {
+    id: 3,
+    type: "running",
+    description: "easy run",
+    date: "2021-08-20",
+    duration: 100,
+    importand: true,
+    finished: false,
+  },
+  {
+    id: 4,
+    type: "running",
+    description: "easy run",
+    date: "2021-08-20",
+    duration: 100,
+    importand: true,
+    finished: false,
+  },
+  {
+    id: 5,
+    type: "running",
+    description: "easy run",
+    date: "2021-08-20",
+    duration: 100,
+    importand: true,
+    finished: false,
+  },
+  {
+    id: 6,
+    type: "running",
+    description: "easy run",
+    date: "2021-08-20",
+    duration: 100,
+    importand: true,
+    finished: false,
+  },
+];
+const Pages = () => {
+  const [trainingsList, setTrainingsList] = useState(defaultTrainings);
+  let idNumber = 10;
 
-  state = {
-    trainings: [
-      {
-        id: 0,
-        type: "running",
-        description: "easy run",
-        date: "2021-08-20",
-        duration: 100,
-        importand: true,
-        finished: false,
-      },
-      {
-        id: 1,
-        type: "running",
-        description: "easy run",
-        date: "2021-08-20",
-        duration: 100,
-        importand: true,
-        finished: false,
-      },
-      {
-        id: 2,
-        type: "running",
-        description: "easy run - enjoy workout",
-        date: this.date,
-        duration: 30,
-        importand: true,
-        finished: false,
-      },
-      {
-        id: 3,
-        type: "running",
-        description: "easy run",
-        date: "2021-08-20",
-        duration: 100,
-        importand: true,
-        finished: false,
-      },
-      {
-        id: 4,
-        type: "running",
-        description: "easy run",
-        date: "2021-08-20",
-        duration: 100,
-        importand: true,
-        finished: false,
-      },
-      {
-        id: 5,
-        type: "running",
-        description: "easy run",
-        date: "2021-08-20",
-        duration: 100,
-        importand: true,
-        finished: false,
-      },
-      {
-        id: 6,
-        type: "running",
-        description: "easy run",
-        date: "2021-08-20",
-        duration: 100,
-        importand: true,
-        finished: false,
-      },
-    ],
-  };
-
-  addTraining = (training) => {
+  const addTraining = (training) => {
     const { type, description, date, minutes, hours, important } = training;
     const newTraining = {
-      id: this.idNumber,
+      id: idNumber,
       type,
       description,
       date,
@@ -91,83 +88,75 @@ class Pages extends Component {
       finished: false,
     };
 
-    this.setState((prevState) => ({
-      trainings: [...prevState.trainings, newTraining],
-    }));
+    setTrainingsList((prevState) => [...prevState.trainings, newTraining]);
 
-    this.idNumber++;
+    idNumber++;
     return true;
   };
 
-  handleCompleteButton = (id) => {
-    let trainings = this.state.trainings;
+  const handleCompleteButton = (id) => {
+    let trainings = trainingsList;
     trainings.forEach((training) => {
       if (training.id === id) {
         training.finished = true;
         return;
       }
     });
-    this.setState({
-      trainings,
-    });
+    setTrainingsList([...trainings]);
   };
 
-  handleDeleteButton = (id) => {
-    let trainings = this.state.trainings;
+  const handleDeleteButton = (id) => {
+    let trainings = trainingsList;
     trainings = trainings.filter((training) => training.id !== id);
-    this.setState({
-      trainings,
-    });
+    setTrainingsList([...trainings]);
   };
 
-  render() {
-    return (
-      <div className="pagesContainer">
-        <Switch>
-          <Route
-            path="/train_app_v.1/"
-            exact
-            render={() => (
-              <Home
-                list={this.state.trainings}
-                complete={this.handleCompleteButton}
-                delete={this.handleDeleteButton}
-              />
-            )}
-          />
+  return (
+    <div className="pagesContainer">
+      <Switch>
+        <Route
+          path="/train_app_v.1/"
+          exact
+          render={() => (
+            <Home
+              list={trainingsList}
+              complete={handleCompleteButton}
+              delete={handleDeleteButton}
+            />
+          )}
+        />
 
-          <Route
-            path="/train_app_v.1/add_workout"
-            exact
-            render={() => <AddWorkout addTraining={this.addTraining} />}
-          />
-          <Route
-            path="/train_app_v.1/training_list"
-            exact
-            render={() => (
-              <TrainingList
-                list={this.state.trainings}
-                complete={this.handleCompleteButton}
-                delete={this.handleDeleteButton}
-              />
-            )}
-          />
+        <Route
+          path="/train_app_v.1/add_workout"
+          exact
+          render={() => <AddWorkout addTraining={addTraining} />}
+        />
+        <Route
+          path="/train_app_v.1/training_list"
+          exact
+          render={() => (
+            <TrainingList
+              list={trainingsList}
+              complete={handleCompleteButton}
+              delete={handleDeleteButton}
+            />
+          )}
+        />
 
-          <Route
-            path="/train_app_v.1/history"
-            exact
-            render={() => (
-              <History
-                list={this.state.trainings}
-                complete={this.handleCompleteButton}
-                delete={this.handleDeleteButton}
-              />
-            )}
-          />
-        </Switch>
-      </div>
-    );
-  }
-}
+        <Route
+          path="/train_app_v.1/history"
+          exact
+          render={() => (
+            <History
+              list={trainingsList}
+              complete={handleCompleteButton}
+              delete={handleDeleteButton}
+            />
+          )}
+        />
+      </Switch>
+    </div>
+  );
+};
 
 export default Pages;
