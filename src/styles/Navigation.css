@@ -1,6 +1,6 @@
 nav.mainNav {
    
-    min-width: 280px;
+    width: 250px;
     padding: 10px;
 }
 
@@ -17,8 +17,18 @@ nav.mainNav li a {
     transition: .3s;
 }
 
+nav.mainNav li {
+    width: 100%;
+}
+
+
 nav.mainNav li a:hover {
-    transform: translateX(20px);
+    padding-left: 20px;
+}
+
+nav.mainNav li a.active {
+    padding-left: 20px;
+    border-left: 8px solid rgb(186, 248, 62);
 }
 
 

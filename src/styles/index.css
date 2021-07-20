@@ -2,7 +2,10 @@
     margin: 0;
     padding: 0;
 }
-
-html {
-    background-color: #7CC9B9;
+body {
+    background-color: #7CC9B9; 
 }
+
+/* html {
+    background-color: #7CC9B9;
+} */
