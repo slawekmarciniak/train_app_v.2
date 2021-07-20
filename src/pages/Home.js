@@ -1,7 +1,6 @@
 import Training from "../Components/Training";
 
 const Home = (props) => {
-  console.log("home props", props);
   const date = new Date().toISOString().slice(0, 10);
   const todaysWorkouts = props.list.filter(
     (training) => training.date === date && training.finished === false
@@ -13,6 +12,7 @@ const Home = (props) => {
       training={training}
       complete={props.complete}
       delete={props.delete}
+      edit={props.edit}
     />
   ));
 

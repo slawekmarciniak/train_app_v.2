@@ -1,6 +1,9 @@
 const Training = (props) => {
-  console.log("training props", props);
   const { id, type, description, date, duration } = props.training;
+
+  const completeButtonHandler = () => props.complete(id);
+  const deleteButtonHandler = () => props.delete(id);
+  const editButtonHandler = () => props.edit(id);
 
   return (
     <tbody>
@@ -11,9 +14,7 @@ const Training = (props) => {
         <td>{date}</td>
         <td className="buttons">
           <button
-            onClick={() => {
-              props.complete(id);
-            }}
+            onClick={completeButtonHandler}
             className="btn btn-primary btn-sm"
           >
             complete
@@ -21,16 +22,19 @@ const Training = (props) => {
         </td>
         <td className="buttons">
           <button
-            onClick={() => {
-              props.delete(id);
-            }}
+            onClick={deleteButtonHandler}
             className="btn btn-danger btn-sm"
           >
             delete
           </button>
         </td>
         <td className="buttons">
-          <button className="btn btn-warning btn-sm">edit</button>
+          <button
+            onClick={editButtonHandler}
+            className="btn btn-warning btn-sm"
+          >
+            edit
+          </button>
         </td>
       </tr>
     </tbody>

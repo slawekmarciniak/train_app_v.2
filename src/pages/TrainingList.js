@@ -9,6 +9,7 @@ const TrainingList = (props) => {
       training={training}
       complete={props.complete}
       delete={props.delete}
+      edit={props.edit}
     />
   ));
 

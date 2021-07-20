@@ -48,6 +48,8 @@ const Pages = () => {
     setTrainingsList([...trainings]);
   };
 
+  const handleEditButton = (id) => console.log(id);
+
   return (
     <div className="pagesContainer">
       <Switch>
@@ -59,6 +61,7 @@ const Pages = () => {
               list={trainingsList}
               complete={handleCompleteButton}
               delete={handleDeleteButton}
+              edit={handleEditButton}
             />
           )}
         />
@@ -76,6 +79,7 @@ const Pages = () => {
               list={trainingsList}
               complete={handleCompleteButton}
               delete={handleDeleteButton}
+              edit={handleEditButton}
             />
           )}
         />
@@ -88,6 +92,7 @@ const Pages = () => {
               list={trainingsList}
               complete={handleCompleteButton}
               delete={handleDeleteButton}
+              edit={handleEditButton}
             />
           )}
         />
