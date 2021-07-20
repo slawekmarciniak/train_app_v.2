@@ -74,15 +74,16 @@ const AddWorkout = ({ addNewTraining }) => {
               required
             />
           </div>
+        </div>
+        <br />
 
-          {/* duration */}
-
-          <div className="col-1 duration">
+        <div className="row">
+          <div className="col-3">
             <input
               name="hours"
               type="number"
-              className="form-control duration"
-              placeholder="h"
+              className="form-control"
+              placeholder="hours"
               aria-label="workout type"
               min="0"
               value={hours}
@@ -91,12 +92,12 @@ const AddWorkout = ({ addNewTraining }) => {
             />
           </div>
 
-          <div className="col-1 duration">
+          <div className="col-3">
             <input
               name="minutes"
               type="number"
-              className="form-control duration"
-              placeholder="m"
+              className="form-control"
+              placeholder="minutes"
               aria-label="workout type"
               min="0"
               max="60"
@@ -105,10 +106,12 @@ const AddWorkout = ({ addNewTraining }) => {
               required
             />
           </div>
+        </div>
 
-          {/* date */}
+        <br />
 
-          <div className="col-4">
+        <div className="row">
+          <div className="col-3">
             <input
               name="date"
               value={date}
@@ -118,31 +121,7 @@ const AddWorkout = ({ addNewTraining }) => {
               onChange={handleInputsChange}
             />
           </div>
-        </div>
-
-        <br />
-
-        {/* training description */}
-
-        <div className="row">
-          <div className="form-floating descriptionInput col">
-            <textarea
-              name="description"
-              value={description}
-              className="form-control"
-              placeholder="Leave a comment here"
-              id="floatingTextarea"
-              onChange={handleInputsChange}
-              required
-            ></textarea>
-            <label className="detailsLabel" htmlFor="floatingTextarea">
-              training details
-            </label>
-          </div>
-
-          {/* important checkbox */}
-
-          <div className="form-check form-switch col">
+          <div className="form-check form-switch col-3">
             <input
               name="important"
               value={important}
@@ -159,13 +138,32 @@ const AddWorkout = ({ addNewTraining }) => {
             </label>
           </div>
         </div>
+
+        <br />
+
+        <div className="row">
+          <div className="form-floating descriptionInput col-6">
+            <textarea
+              name="description"
+              value={description}
+              className="form-control"
+              placeholder="Leave a comment here"
+              id="floatingTextarea"
+              onChange={handleInputsChange}
+              required
+            ></textarea>
+            <label className="detailsLabel" htmlFor="floatingTextarea">
+              training details
+            </label>
+          </div>
+        </div>
         <br />
         <button
           onClick={handleFormButton}
           type="submit"
           className="btn btn-info"
         >
-          add training
+          add
         </button>
       </form>
       <br />

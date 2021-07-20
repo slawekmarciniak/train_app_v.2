@@ -1,79 +1,16 @@
 import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "../pages/Home";
+
 import AddWorkout from "../pages/AddWorkout";
-import TrainingList from "../pages/TrainingList";
-import Training from "../Components/Training";
+import DefaultTrainings from "../DataBase/DefaultTrainings";
 import History from "../pages/History";
+import Home from "../pages/Home";
+import TrainingList from "../pages/TrainingList";
+
 import "../styles/Pages.css";
 
-const defaultTrainings = [
-  {
-    id: 0,
-    type: "running",
-    description: "easy run",
-    date: "2021-08-20",
-    duration: 100,
-    importand: true,
-    finished: false,
-  },
-  {
-    id: 1,
-    type: "running",
-    description: "easy run",
-    date: "2021-08-20",
-    duration: 100,
-    importand: true,
-    finished: false,
-  },
-  {
-    id: 2,
-    type: "running",
-    description: "easy run - enjoy workout",
-    date: new Date().toISOString().slice(0, 10),
-    duration: 30,
-    importand: true,
-    finished: false,
-  },
-  {
-    id: 3,
-    type: "running",
-    description: "easy run",
-    date: "2021-08-20",
-    duration: 100,
-    importand: true,
-    finished: false,
-  },
-  {
-    id: 4,
-    type: "running",
-    description: "easy run",
-    date: "2021-08-20",
-    duration: 100,
-    importand: true,
-    finished: false,
-  },
-  {
-    id: 5,
-    type: "running",
-    description: "easy run",
-    date: "2021-08-20",
-    duration: 100,
-    importand: true,
-    finished: false,
-  },
-  {
-    id: 6,
-    type: "running",
-    description: "easy run",
-    date: "2021-08-20",
-    duration: 100,
-    importand: true,
-    finished: false,
-  },
-];
 const Pages = () => {
-  const [trainingsList, setTrainingsList] = useState(defaultTrainings);
+  const [trainingsList, setTrainingsList] = useState(DefaultTrainings);
   let idNumber = 10;
 
   const addTraining = (training) => {

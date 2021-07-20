@@ -3,8 +3,6 @@ import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// import TrainingsList from "../Components/TrainingsList";
-// import AddTraining from "../Components/AddTraining";
 
 import Header from "./Header";
 import Path from "./Path";

@@ -38,3 +38,15 @@ main {
     margin-left: 10px;
     color: gray;
 }
+
+.btn {
+    text-transform: uppercase;
+    color: whitesmoke;
+    width: 90px;
+}
+
+td.buttons {
+    max-width: 95px;
+}
+
+

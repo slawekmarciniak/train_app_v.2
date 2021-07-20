@@ -1,4 +1,5 @@
 const Training = (props) => {
+  console.log("training props", props);
   const { id, type, description, date, duration } = props.training;
 
   return (
@@ -8,7 +9,7 @@ const Training = (props) => {
         <td>{description}</td>
         <td>{duration}</td>
         <td>{date}</td>
-        <td>
+        <td className="buttons">
           <button
             onClick={() => {
               props.complete(id);
@@ -18,7 +19,7 @@ const Training = (props) => {
             complete
           </button>
         </td>
-        <td>
+        <td className="buttons">
           <button
             onClick={() => {
               props.delete(id);
@@ -27,6 +28,9 @@ const Training = (props) => {
           >
             delete
           </button>
+        </td>
+        <td className="buttons">
+          <button className="btn btn-warning btn-sm">edit</button>
         </td>
       </tr>
     </tbody>

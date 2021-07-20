@@ -7,8 +7,6 @@ import header5 from "../images/header5.jpg";
 import header6 from "../images/header6.jpg";
 import "../styles/Header.css";
 
-// const homePath = "/train_app_v.1/";
-
 const Header = () => {
   return (
     <>
