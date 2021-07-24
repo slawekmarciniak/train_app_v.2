@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 
 import AddWorkout from "../pages/AddWorkout";
 import DefaultTrainings from "../DataBase/DefaultTrainings";
+import EditWorkout from "../pages/EditWorkout";
 import History from "../pages/History";
 import Home from "../pages/Home";
 import TrainingList from "../pages/TrainingList";
@@ -10,7 +11,10 @@ import TrainingList from "../pages/TrainingList";
 import "../styles/Pages.css";
 
 const Pages = () => {
+  let history = useHistory();
+
   const [trainingsList, setTrainingsList] = useState(DefaultTrainings);
+  const [editingWorkout, setEditingWorkout] = useState("a");
   let idNumber = 10;
 
   const addTraining = (training) => {
@@ -48,7 +52,20 @@ const Pages = () => {
     setTrainingsList([...trainings]);
   };
 
-  const handleEditButton = (id) => console.log(id);
+  const handleEditButton = (id) => {
+    let trainings = trainingsList;
+    let training = trainings.filter((training) => training.id === id);
+    setEditingWorkout(training[0]);
+    history.push("/train_app_v.1/edit_workout");
+  };
+
+  const saveEditedWorkout = (value) => {
+    let trainings = trainingsList;
+    trainings = trainings.filter((training) => training.id !== value.id);
+    setTrainingsList([...trainings]);
+    setTrainingsList((prevState) => [...prevState, value]);
+    return true;
+  };
 
   return (
     <div className="pagesContainer">
@@ -71,6 +88,18 @@ const Pages = () => {
           exact
           render={() => <AddWorkout addNewTraining={addTraining} />}
         />
+
+        <Route
+          path="/train_app_v.1/edit_workout"
+          exact
+          render={() => (
+            <EditWorkout
+              editedWorkout={editingWorkout}
+              saveEdit={saveEditedWorkout}
+            />
+          )}
+        />
+
         <Route
           path="/train_app_v.1/training_list"
           exact

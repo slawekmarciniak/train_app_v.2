@@ -21,7 +21,8 @@ const History = (props) => {
           <tr>
             <th>type</th>
             <th>description</th>
-            <th>duration</th>
+            <th>h</th>
+            <th>m</th>
             <th>date</th>
             <th></th>
             <th></th>
