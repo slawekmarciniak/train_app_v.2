@@ -1,11 +1,9 @@
 # Ultran Training App v.1
 
-In this project I create app scaffold.
+My target is to build CRUD functionality for training plan app.
 
-My target is to build CRUD functionality for training plan.
+In this project I use: JS, React, Hooks, React Router, basic Bootstrap & self made CSS styles.
 
-Next i would like to separate views of my App into different routes using React Router.
+To do: React Context.
 
-I will add navbar, and basics bootstrap styles.
-
-In this way i will be abble to build first step of MVP.
+🎥 Preview site ➡️ tap here
