@@ -6,4 +6,6 @@ In this project I use: JS, React, Hooks, React Router, basic Bootstrap & self ma
 
 To do: React Context.
 
-🎥 Preview site ➡️ tap here
+- [x] 🎥 Preview site :arrow_right: [tap here](https://ultran.github.io/train_app_v.1/)
+
+...
