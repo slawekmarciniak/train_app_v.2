@@ -4,10 +4,16 @@ export const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [isUserLogged, setIsUserLogged] = useState(false);
-  const toggleLoggedState = () => setIsUserLogged((prevValue) => !prevValue);
+  const [userName, setUserName] = useState("");
+
+  const toggleLoggedState = (name) => {
+    changeUserName(name);
+    setIsUserLogged((prevValue) => !prevValue);
+  };
+  const changeUserName = (name) => setUserName(name);
 
   return (
-    <AppContext.Provider value={{ isUserLogged, toggleLoggedState }}>
+    <AppContext.Provider value={{ isUserLogged, toggleLoggedState, userName }}>
       {children}
     </AppContext.Provider>
   );
