@@ -7,7 +7,7 @@ const list = [
   { name: "training list", path: "/train_app_v.1/training_list" },
   { name: "history", path: "/train_app_v.1/history" },
   { name: "contact", path: "/train_app_v.1/contact" },
-  { name: "admin", path: "/train_app_v.1/admin" },
+  { name: "login", path: "/train_app_v.1/login" },
 ];
 
 const Navigation = () => {

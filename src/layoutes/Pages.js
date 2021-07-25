@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 
 import AddWorkout from "../pages/AddWorkout";
+import AppProvider from "./AppContext";
 import DefaultTrainings from "../DataBase/DefaultTrainings";
 import EditWorkout from "../pages/EditWorkout";
 import History from "../pages/History";
 import Home from "../pages/Home";
+import Login from "../pages/Login";
 import TrainingList from "../pages/TrainingList";
 
 import "../styles/Pages.css";
@@ -69,63 +71,67 @@ const Pages = () => {
 
   return (
     <div className="pagesContainer">
-      <Switch>
-        <Route
-          path="/train_app_v.1/"
-          exact
-          render={() => (
-            <Home
-              list={trainingsList}
-              complete={handleCompleteButton}
-              delete={handleDeleteButton}
-              edit={handleEditButton}
-            />
-          )}
-        />
+      <AppProvider>
+        <Switch>
+          <Route
+            path="/train_app_v.1/"
+            exact
+            render={() => (
+              <Home
+                list={trainingsList}
+                complete={handleCompleteButton}
+                delete={handleDeleteButton}
+                edit={handleEditButton}
+              />
+            )}
+          />
 
-        <Route
-          path="/train_app_v.1/add_workout"
-          exact
-          render={() => <AddWorkout addNewTraining={addTraining} />}
-        />
+          <Route
+            path="/train_app_v.1/add_workout"
+            exact
+            render={() => <AddWorkout addNewTraining={addTraining} />}
+          />
 
-        <Route
-          path="/train_app_v.1/edit_workout"
-          exact
-          render={() => (
-            <EditWorkout
-              editedWorkout={editingWorkout}
-              saveEdit={saveEditedWorkout}
-            />
-          )}
-        />
+          <Route
+            path="/train_app_v.1/edit_workout"
+            exact
+            render={() => (
+              <EditWorkout
+                editedWorkout={editingWorkout}
+                saveEdit={saveEditedWorkout}
+              />
+            )}
+          />
 
-        <Route
-          path="/train_app_v.1/training_list"
-          exact
-          render={() => (
-            <TrainingList
-              list={trainingsList}
-              complete={handleCompleteButton}
-              delete={handleDeleteButton}
-              edit={handleEditButton}
-            />
-          )}
-        />
+          <Route
+            path="/train_app_v.1/training_list"
+            exact
+            render={() => (
+              <TrainingList
+                list={trainingsList}
+                complete={handleCompleteButton}
+                delete={handleDeleteButton}
+                edit={handleEditButton}
+              />
+            )}
+          />
 
-        <Route
-          path="/train_app_v.1/history"
-          exact
-          render={() => (
-            <History
-              list={trainingsList}
-              complete={handleCompleteButton}
-              delete={handleDeleteButton}
-              edit={handleEditButton}
-            />
-          )}
-        />
-      </Switch>
+          <Route
+            path="/train_app_v.1/history"
+            exact
+            render={() => (
+              <History
+                list={trainingsList}
+                complete={handleCompleteButton}
+                delete={handleDeleteButton}
+                edit={handleEditButton}
+              />
+            )}
+          />
+
+          <Route path="/train_app_v.1/login" exact render={() => <Login />} />
+        </Switch>
+      </AppProvider>
     </div>
   );
 };
