@@ -16,9 +16,9 @@ const Path = () => {
 
   return (
     <div className="path">
-      <Route path="/train_app_v.1/" exact render={() => <p>home</p>} />
+      <Route path="/" exact render={() => <p>home</p>} />
       <Route
-        path="/train_app_v.1/:page"
+        path="/:page"
         exact
         render={(props) => (
           <p>
