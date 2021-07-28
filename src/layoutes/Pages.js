@@ -71,67 +71,65 @@ const Pages = () => {
 
   return (
     <div className="pagesContainer">
-      <AppProvider>
-        <Switch>
-          <Route
-            path="/train_app_v.1/"
-            exact
-            render={() => (
-              <Home
-                list={trainingsList}
-                complete={handleCompleteButton}
-                delete={handleDeleteButton}
-                edit={handleEditButton}
-              />
-            )}
-          />
+      <Switch>
+        <Route
+          path="/train_app_v.1/"
+          exact
+          render={() => (
+            <Home
+              list={trainingsList}
+              complete={handleCompleteButton}
+              delete={handleDeleteButton}
+              edit={handleEditButton}
+            />
+          )}
+        />
 
-          <Route
-            path="/train_app_v.1/add_workout"
-            exact
-            render={() => <AddWorkout addNewTraining={addTraining} />}
-          />
+        <Route
+          path="/train_app_v.1/add_workout"
+          exact
+          render={() => <AddWorkout addNewTraining={addTraining} />}
+        />
 
-          <Route
-            path="/train_app_v.1/edit_workout"
-            exact
-            render={() => (
-              <EditWorkout
-                editedWorkout={editingWorkout}
-                saveEdit={saveEditedWorkout}
-              />
-            )}
-          />
+        <Route
+          path="/train_app_v.1/edit_workout"
+          exact
+          render={() => (
+            <EditWorkout
+              editedWorkout={editingWorkout}
+              saveEdit={saveEditedWorkout}
+            />
+          )}
+        />
 
-          <Route
-            path="/train_app_v.1/training_list"
-            exact
-            render={() => (
-              <TrainingList
-                list={trainingsList}
-                complete={handleCompleteButton}
-                delete={handleDeleteButton}
-                edit={handleEditButton}
-              />
-            )}
-          />
+        <Route
+          path="/train_app_v.1/training_list"
+          exact
+          render={() => (
+            <TrainingList
+              list={trainingsList}
+              complete={handleCompleteButton}
+              delete={handleDeleteButton}
+              edit={handleEditButton}
+            />
+          )}
+        />
 
-          <Route
-            path="/train_app_v.1/history"
-            exact
-            render={() => (
-              <History
-                list={trainingsList}
-                complete={handleCompleteButton}
-                delete={handleDeleteButton}
-                edit={handleEditButton}
-              />
-            )}
-          />
+        <Route
+          path="/train_app_v.1/history"
+          exact
+          render={() => (
+            <History
+              list={trainingsList}
+              complete={handleCompleteButton}
+              delete={handleDeleteButton}
+              edit={handleEditButton}
+            />
+          )}
+        />
 
-          <Route path="/train_app_v.1/login" exact render={() => <Login />} />
-        </Switch>
-      </AppProvider>
+        <Route path="/train_app_v.1/login" exact render={() => <Login />} />
+      </Switch>
     </div>
   );
 };

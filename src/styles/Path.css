@@ -1,11 +1,34 @@
 .path {
+    display: flex;
     height: 25px;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .path p {
+
     font-size: 12px;
     font-style: italic;
     margin-left: 10px;
-    color: cadetblue;
+    color: #535c68;
 
 }
+
+span.login {
+
+    font-size: 12px;
+    font-style: italic;
+    margin-left: 15px;
+    color: whitesmoke;
+    margin-right: 100px;
+}
+
+span.user {
+    text-transform: uppercase;
+    color: #ffbe76;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+

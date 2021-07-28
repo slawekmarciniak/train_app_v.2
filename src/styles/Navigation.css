@@ -13,7 +13,8 @@ nav.mainNav li a {
     text-transform: uppercase;
     text-decoration: none;
     padding: 5px 0;
-    color: #333;
+    color: #535c68;
+  
     transition: .3s;
 }
 
@@ -28,7 +29,7 @@ nav.mainNav li a:hover {
 
 nav.mainNav li a.active {
     padding-left: 20px;
-    border-left: 8px solid rgb(186, 248, 62);
+    border-left: 8px solid #ffbe76;
 }
 
 

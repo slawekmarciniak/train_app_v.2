@@ -1,6 +1,6 @@
 
 body {
-    background-color: #a6cec6; 
+    background-color: #dfe6e9; 
 }
 
 .app {
@@ -10,7 +10,8 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
-    background-color: #7BC5B7;
+    background-color:#95afc0;
+    box-shadow: 0 0 3px 3px #95afc0;
 }
 
 

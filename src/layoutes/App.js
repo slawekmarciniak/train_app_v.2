@@ -1,8 +1,8 @@
 import React, { Component } from "react";
+import AppProvider from "./AppContext";
 
 import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 
 import Header from "./Header";
 import Path from "./Path";
@@ -14,27 +14,31 @@ import "../styles/App.css";
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="app">
-          <header>
-            <Header />
-          </header>
-          <section className="path">
-            <Path />
-          </section>
-          <main>
-            <aside>
-              <Navigation />
-            </aside>
-            <section className="page">
-              <Pages />
+      <AppProvider>
+        <Router>
+          <div className="app">
+            <header>
+              <Header />
+            </header>
+
+            <section className="path">
+              <Path />
             </section>
-          </main>
-          <footer>
-            <Footer />
-          </footer>
-        </div>
-      </Router>
+
+            <main>
+              <aside>
+                <Navigation />
+              </aside>
+              <section className="page">
+                <Pages />
+              </section>
+            </main>
+            <footer>
+              <Footer />
+            </footer>
+          </div>
+        </Router>
+      </AppProvider>
     );
   }
 }

@@ -42,6 +42,11 @@ const Header = () => {
           path="/train_app_v.1/edit_workout"
           render={() => <img src={header2} alt="sport"></img>}
         />
+
+        <Route
+          path="/train_app_v.1/login"
+          render={() => <img src={header2} alt="sport"></img>}
+        />
       </Switch>
     </>
   );

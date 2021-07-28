@@ -7,7 +7,7 @@ const Login = () => {
   const { isUserLogged } = useContext(AppContext);
   const { userName } = useContext(AppContext);
 
-  const logoutInformation = `${userName}click button below for logout`;
+  const logoutInformation = `${userName} click button below for logout`;
   const loginInformation = "Enter name and password for login";
 
   const handleInputChange = (e) => {
