@@ -24,7 +24,7 @@ const Home = (props) => {
 
   return (
     <>
-      <p className="quote"> {quote}</p>
+      {/* <p className="quote"> {quote}</p> */}
       <h5 className="pageHeader">{pageHeader}</h5>
 
       {todaysWorkouts.length > 0 && (
