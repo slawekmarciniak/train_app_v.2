@@ -12,39 +12,39 @@ const Header = () => {
     <>
       <Switch>
         <Route
-          path="/train_app_v.1/"
+          path="/"
           exact
           render={() => <img src={header6} alt="sport"></img>}
         />
 
         <Route
-          path="/train_app_v.1/add_workout"
+          path="/add_workout"
           render={() => <img src={header3} alt="sport"></img>}
         />
         <Route
-          path="/train_app_v.1/training_list"
+          path="/training_list"
           render={() => <img src={header4} alt="sport"></img>}
         />
         <Route
-          path="/train_app_v.1/history"
+          path="/history"
           render={() => <img src={header5} alt="sport"></img>}
         />
         <Route
-          path="/train_app_v.1/contact"
+          path="/contact"
           render={() => <img src={header1} alt="sport"></img>}
         />
         <Route
-          path="/train_app_v.1/admin"
+          path="/admin"
           render={() => <img src={header2} alt="sport"></img>}
         />
 
         <Route
-          path="/train_app_v.1/edit_workout"
+          path="/edit_workout"
           render={() => <img src={header2} alt="sport"></img>}
         />
 
         <Route
-          path="/train_app_v.1/login"
+          path="/login"
           render={() => <img src={header2} alt="sport"></img>}
         />
       </Switch>

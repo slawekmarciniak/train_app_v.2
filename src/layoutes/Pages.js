@@ -58,7 +58,7 @@ const Pages = () => {
     let trainings = trainingsList;
     let training = trainings.filter((training) => training.id === id);
     setEditingWorkout(training[0]);
-    history.push("/train_app_v.1/edit_workout");
+    history.push("/edit_workout");
   };
 
   const saveEditedWorkout = (value) => {
@@ -73,7 +73,7 @@ const Pages = () => {
     <div className="pagesContainer">
       <Switch>
         <Route
-          path="/train_app_v.1/"
+          path="/"
           exact
           render={() => (
             <Home
@@ -86,13 +86,13 @@ const Pages = () => {
         />
 
         <Route
-          path="/train_app_v.1/add_workout"
+          path="/add_workout"
           exact
           render={() => <AddWorkout addNewTraining={addTraining} />}
         />
 
         <Route
-          path="/train_app_v.1/edit_workout"
+          path="/edit_workout"
           exact
           render={() => (
             <EditWorkout
@@ -103,7 +103,7 @@ const Pages = () => {
         />
 
         <Route
-          path="/train_app_v.1/training_list"
+          path="/training_list"
           exact
           render={() => (
             <TrainingList
@@ -116,7 +116,7 @@ const Pages = () => {
         />
 
         <Route
-          path="/train_app_v.1/history"
+          path="/history"
           exact
           render={() => (
             <History
@@ -128,7 +128,7 @@ const Pages = () => {
           )}
         />
 
-        <Route path="/train_app_v.1/login" exact render={() => <Login />} />
+        <Route path="/login" exact render={() => <Login />} />
       </Switch>
     </div>
   );

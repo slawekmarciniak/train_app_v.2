@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom";
 import "../styles/Navigation.css";
 
 const list = [
-  { name: "home", path: "/train_app_v.1/", exact: true },
-  { name: "add workout", path: "/train_app_v.1/add_workout" },
-  { name: "training list", path: "/train_app_v.1/training_list" },
-  { name: "history", path: "/train_app_v.1/history" },
-  { name: "contact", path: "/train_app_v.1/contact" },
-  { name: "login", path: "/train_app_v.1/login" },
+  { name: "home", path: "/", exact: true },
+  { name: "add workout", path: "/add_workout" },
+  { name: "training list", path: "/training_list" },
+  { name: "history", path: "/history" },
+  { name: "contact", path: "/contact" },
+  { name: "login", path: "/login" },
 ];
 
 const Navigation = () => {
