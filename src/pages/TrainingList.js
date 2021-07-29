@@ -1,14 +1,16 @@
 import Training from "../Components/Training";
+import { useContext } from "react";
+import { AppContext } from "../layoutes/AppContext";
 
 const TrainingList = (props) => {
-  const active = props.list.filter((training) => !training.finished);
+  const { state } = useContext(AppContext);
+  const active = state.filter((training) => !training.finished);
 
   const activeList = active.map((training) => (
     <Training
       key={training.id}
       training={training}
       complete={props.complete}
-      delete={props.delete}
       edit={props.edit}
     />
   ));

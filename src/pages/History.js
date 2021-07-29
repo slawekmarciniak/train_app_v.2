@@ -8,7 +8,6 @@ const History = (props) => {
       key={training.id}
       training={training}
       complete={props.complete}
-      delete={props.delete}
       edit={props.edit}
     />
   ));

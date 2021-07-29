@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
-
 import AddWorkout from "../pages/AddWorkout";
-import AppProvider from "./AppContext";
 import DefaultTrainings from "../DataBase/DefaultTrainings";
 import EditWorkout from "../pages/EditWorkout";
 import History from "../pages/History";
@@ -48,12 +46,6 @@ const Pages = () => {
     setTrainingsList([...trainings]);
   };
 
-  const handleDeleteButton = (id) => {
-    let trainings = trainingsList;
-    trainings = trainings.filter((training) => training.id !== id);
-    setTrainingsList([...trainings]);
-  };
-
   const handleEditButton = (id) => {
     let trainings = trainingsList;
     let training = trainings.filter((training) => training.id === id);
@@ -79,7 +71,6 @@ const Pages = () => {
             <Home
               list={trainingsList}
               complete={handleCompleteButton}
-              delete={handleDeleteButton}
               edit={handleEditButton}
             />
           )}
@@ -109,7 +100,6 @@ const Pages = () => {
             <TrainingList
               list={trainingsList}
               complete={handleCompleteButton}
-              delete={handleDeleteButton}
               edit={handleEditButton}
             />
           )}
@@ -122,7 +112,6 @@ const Pages = () => {
             <History
               list={trainingsList}
               complete={handleCompleteButton}
-              delete={handleDeleteButton}
               edit={handleEditButton}
             />
           )}

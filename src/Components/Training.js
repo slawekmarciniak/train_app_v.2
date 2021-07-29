@@ -1,10 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { AppContext } from "../layoutes/AppContext";
 
 const Training = (props) => {
   const { id, type, description, date, hours, minutes } = props.training;
+  const { dispatch } = useContext(AppContext);
 
   const completeButtonHandler = () => props.complete(id);
-  const deleteButtonHandler = () => props.delete(id);
+  const deleteButtonHandler = () =>
+    dispatch({
+      id,
+      type: "REMOVE",
+    });
   const editButtonHandler = () => props.edit(id);
 
   return (
