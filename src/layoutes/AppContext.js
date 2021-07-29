@@ -5,8 +5,8 @@ export const AppContext = createContext();
 
 const trainingReducer = (state, action) => {
   switch (action.type) {
-    // case "ADD":
-    //   return [...state, action.course];
+    case "ADD":
+      return [...state, action.course];
     case "DELETE":
       console.log("delete");
       return state.filter((training) => training.id !== action.id);

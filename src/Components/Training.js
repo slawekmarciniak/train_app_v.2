@@ -13,7 +13,7 @@ const Training = (props) => {
   const deleteButtonHandler = () =>
     dispatch({
       id,
-      type: "REMOVE",
+      type: "DELETE",
     });
   const editButtonHandler = () => props.edit(id);
 

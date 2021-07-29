@@ -1,8 +1,12 @@
 import Training from "../Components/Training";
+import { useContext } from "react";
+import { AppContext } from "../layoutes/AppContext";
 
 const Home = (props) => {
+  const { state } = useContext(AppContext);
   const date = new Date().toISOString().slice(0, 10);
-  const todaysWorkouts = props.list.filter(
+
+  const todaysWorkouts = state.filter(
     (training) => training.date === date && training.finished === false
   );
 
@@ -17,7 +21,6 @@ const Home = (props) => {
 
   return (
     <>
-      {/* <p className="quote"> {quote}</p> */}
       <h5 className="pageHeader">{pageHeader}</h5>
 
       {todaysWorkouts.length > 0 && (
