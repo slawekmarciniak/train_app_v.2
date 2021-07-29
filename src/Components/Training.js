@@ -5,7 +5,11 @@ const Training = (props) => {
   const { id, type, description, date, hours, minutes } = props.training;
   const { dispatch } = useContext(AppContext);
 
-  const completeButtonHandler = () => props.complete(id);
+  const completeButtonHandler = () =>
+    dispatch({
+      id,
+      type: "COMPLETE",
+    });
   const deleteButtonHandler = () =>
     dispatch({
       id,

@@ -14,6 +14,15 @@ const trainingReducer = (state, action) => {
     case "DELETE":
       console.log("delete");
       return state.filter((training) => training.id !== action.id);
+    case "COMPLETE":
+      let trainings = state;
+      trainings.forEach((training) => {
+        if (training.id === action.id) {
+          training.finished = true;
+          return;
+        }
+      });
+      return [...trainings];
     default:
       throw new Error(`OOops something went wrong action type ${action.type}`);
   }
@@ -31,12 +40,6 @@ const AppProvider = ({ children }) => {
     setIsUserLogged((prevValue) => !prevValue);
   };
   const changeUserName = (name) => setUserName(name);
-
-  // const handleDeleteButton = (id) => {
-  //   let trainings = trainingsList;
-  //   trainings = trainings.filter((training) => training.id !== id);
-  //   setTrainingsList([...trainings]);
-  // };
 
   return (
     <AppContext.Provider
