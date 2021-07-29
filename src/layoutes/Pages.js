@@ -35,17 +35,6 @@ const Pages = () => {
     return true;
   };
 
-  const handleCompleteButton = (id) => {
-    let trainings = trainingsList;
-    trainings.forEach((training) => {
-      if (training.id === id) {
-        training.finished = true;
-        return;
-      }
-    });
-    setTrainingsList([...trainings]);
-  };
-
   const handleEditButton = (id) => {
     let trainings = trainingsList;
     let training = trainings.filter((training) => training.id === id);
@@ -67,13 +56,7 @@ const Pages = () => {
         <Route
           path="/"
           exact
-          render={() => (
-            <Home
-              list={trainingsList}
-              complete={handleCompleteButton}
-              edit={handleEditButton}
-            />
-          )}
+          render={() => <Home list={trainingsList} edit={handleEditButton} />}
         />
 
         <Route
@@ -97,11 +80,7 @@ const Pages = () => {
           path="/training_list"
           exact
           render={() => (
-            <TrainingList
-              list={trainingsList}
-              complete={handleCompleteButton}
-              edit={handleEditButton}
-            />
+            <TrainingList list={trainingsList} edit={handleEditButton} />
           )}
         />
 
@@ -109,11 +88,7 @@ const Pages = () => {
           path="/history"
           exact
           render={() => (
-            <History
-              list={trainingsList}
-              complete={handleCompleteButton}
-              edit={handleEditButton}
-            />
+            <History list={trainingsList} edit={handleEditButton} />
           )}
         />
 

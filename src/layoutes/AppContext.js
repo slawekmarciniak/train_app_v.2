@@ -5,12 +5,8 @@ export const AppContext = createContext();
 
 const trainingReducer = (state, action) => {
   switch (action.type) {
-    case "ADD":
-      return [...state, action.course];
-    case "REMOVE":
-      return state.filter((el) => el.id !== action.id);
-    case "FETCH":
-      return action.data;
+    // case "ADD":
+    //   return [...state, action.course];
     case "DELETE":
       console.log("delete");
       return state.filter((training) => training.id !== action.id);
@@ -24,7 +20,7 @@ const trainingReducer = (state, action) => {
       });
       return [...trainings];
     default:
-      throw new Error(`OOops something went wrong action type ${action.type}`);
+      throw new Error(`OOops something went wrong, action type ${action.type}`);
   }
 };
 

@@ -7,12 +7,7 @@ const TrainingList = (props) => {
   const active = state.filter((training) => !training.finished);
 
   const activeList = active.map((training) => (
-    <Training
-      key={training.id}
-      training={training}
-      complete={props.complete}
-      edit={props.edit}
-    />
+    <Training key={training.id} training={training} edit={props.edit} />
   ));
 
   return (
