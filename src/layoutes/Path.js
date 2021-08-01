@@ -29,11 +29,6 @@ const Path = () => {
       {welcomeIfLogged}
     </div>
   );
-
-  // <Route render={() => <p>path</p>} />
-  // <Route render={() => <p>path</p>} />
-  // <Route render={() => <p>path</p>} />
-  // <Route render={() => <p>path</p>} />
 };
 
 export default Path;

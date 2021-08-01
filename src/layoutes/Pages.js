@@ -12,7 +12,6 @@ import "../styles/Pages.css";
 
 const Pages = () => {
   let history = useHistory();
-
   const [trainingsList, setTrainingsList] = useState(DefaultTrainings);
   const [editingWorkout, setEditingWorkout] = useState("a");
   let idNumber = 10;

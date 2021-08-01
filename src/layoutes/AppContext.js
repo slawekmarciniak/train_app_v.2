@@ -5,8 +5,6 @@ export const AppContext = createContext();
 
 const trainingReducer = (state, action) => {
   switch (action.type) {
-    case "ADD":
-      return [...state, action.course];
     case "DELETE":
       console.log("delete");
       return state.filter((training) => training.id !== action.id);
@@ -29,7 +27,6 @@ const AppProvider = ({ children }) => {
   const [isUserLogged, setIsUserLogged] = useState(false);
   const [userName, setUserName] = useState("");
 
-  console.log(state);
 
   const toggleLoggedState = (name) => {
     changeUserName(name);
