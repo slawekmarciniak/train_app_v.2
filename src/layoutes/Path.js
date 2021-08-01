@@ -22,7 +22,7 @@ const Path = () => {
         exact
         render={(props) => (
           <p>
-            home {userName} {">"} {props.match.params.page}
+            home {">"} {props.match.params.page}
           </p>
         )}
       />

@@ -1,4 +1,5 @@
 import React, { createContext, useState, useReducer } from "react";
+
 import DefaultTrainings from "../DataBase/DefaultTrainings";
 
 export const AppContext = createContext();
@@ -26,7 +27,12 @@ const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(trainingReducer, DefaultTrainings);
   const [isUserLogged, setIsUserLogged] = useState(false);
   const [userName, setUserName] = useState("");
+  const [editingWorkout, setEditingWorkout] = useState("");
 
+  const handleEditButton = (id) => {
+    let training = state.filter((training) => training.id === id);
+    setEditingWorkout(training[0]);
+  };
 
   const toggleLoggedState = (name) => {
     changeUserName(name);
@@ -36,7 +42,15 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ isUserLogged, toggleLoggedState, userName, dispatch, state }}
+      value={{
+        isUserLogged,
+        toggleLoggedState,
+        userName,
+        dispatch,
+        state,
+        handleEditButton,
+        editingWorkout,
+      }}
     >
       {children}
     </AppContext.Provider>

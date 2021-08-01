@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AppContext } from "../layoutes/AppContext";
 
-const EditWorkout = ({ editedWorkout, saveEdit }) => {
-  const [date, setDate] = useState(editedWorkout.date);
-  const [description, setDescription] = useState(editedWorkout.description);
-  const [hours, setHours] = useState(editedWorkout.hours);
-  const [important, setImportant] = useState(editedWorkout.important);
-  const [minutes, setMinutes] = useState(editedWorkout.minutes);
-  const [type, setType] = useState(editedWorkout.type);
+const EditWorkout = ({ saveEdit }) => {
+  const { editingWorkout } = useContext(AppContext);
+
+  const [date, setDate] = useState(editingWorkout.date);
+  const [description, setDescription] = useState(editingWorkout.description);
+  const [hours, setHours] = useState(editingWorkout.hours);
+  const [important, setImportant] = useState(editingWorkout.important);
+  const [minutes, setMinutes] = useState(editingWorkout.minutes);
+  const [type, setType] = useState(editingWorkout.type);
 
   const handleInputsChange = (e) => {
     const name = e.target.name;
@@ -37,7 +40,7 @@ const EditWorkout = ({ editedWorkout, saveEdit }) => {
     e.preventDefault();
     if (formValidation) {
       const edit = saveEdit({
-        id: editedWorkout.id,
+        id: editingWorkout.id,
         type,
         description,
         date,

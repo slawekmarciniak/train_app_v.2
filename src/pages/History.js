@@ -7,7 +7,7 @@ const History = (props) => {
   const finished = state.filter((training) => training.finished);
 
   const finishedList = finished.map((training) => (
-    <Training key={training.id} training={training} edit={props.edit} />
+    <Training key={training.id} training={training} />
   ));
 
   return (

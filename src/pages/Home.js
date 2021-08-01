@@ -2,7 +2,7 @@ import Training from "../Components/Training";
 import { useContext } from "react";
 import { AppContext } from "../layoutes/AppContext";
 
-const Home = (props) => {
+const Home = () => {
   const { state } = useContext(AppContext);
   const date = new Date().toISOString().slice(0, 10);
 
@@ -16,7 +16,7 @@ const Home = (props) => {
       : "no more workouts for today";
 
   const todaysList = todaysWorkouts.map((training) => (
-    <Training key={training.id} training={training} edit={props.edit} />
+    <Training key={training.id} training={training} />
   ));
 
   return (

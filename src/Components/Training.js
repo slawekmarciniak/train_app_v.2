@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { AppContext } from "../layoutes/AppContext";
+import { useHistory } from "react-router-dom";
 
 const Training = (props) => {
+  const history = useHistory();
   const { id, type, description, date, hours, minutes } = props.training;
   const { dispatch } = useContext(AppContext);
+  const { handleEditButton } = useContext(AppContext);
 
   const completeButtonHandler = () =>
     dispatch({
@@ -15,7 +18,10 @@ const Training = (props) => {
       id,
       type: "DELETE",
     });
-  const editButtonHandler = () => props.edit(id);
+  const editButtonHandler = () => {
+    handleEditButton(id);
+    history.push("/edit_workout");
+  };
 
   return (
     <tbody>
