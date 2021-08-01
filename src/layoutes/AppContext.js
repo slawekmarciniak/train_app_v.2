@@ -1,11 +1,13 @@
 import React, { createContext, useState, useReducer } from "react";
-
 import DefaultTrainings from "../DataBase/DefaultTrainings";
 
 export const AppContext = createContext();
 
 const trainingReducer = (state, action) => {
   switch (action.type) {
+    case "ADD":
+      console.log("add");
+      return [...state, action.value];
     case "EDIT":
       let trainingsList = state.filter(
         (training) => training.id !== action.value.id

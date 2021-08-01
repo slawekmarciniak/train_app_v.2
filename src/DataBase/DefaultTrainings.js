@@ -69,6 +69,16 @@ const DefaultTrainings = [
     important: true,
     finished: false,
   },
+  {
+    id: 7,
+    type: "running",
+    description: "easy run",
+    date: "2021-08-01",
+    minutes: 30,
+    hours: 0,
+    important: true,
+    finished: true,
+  },
 ];
 
 export default DefaultTrainings;

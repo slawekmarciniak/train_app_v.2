@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AppContext } from "../layoutes/AppContext";
+import { v4 as uuidv4 } from "uuid";
 
-const AddWorkout = ({ addNewTraining }) => {
+const AddWorkout = () => {
+  const { dispatch } = useContext(AppContext);
   const defaultDate = new Date().toISOString().slice(0, 10);
+
+  console.log(defaultDate);
 
   const [date, setDate] = useState(defaultDate);
   const [description, setDescription] = useState("");
@@ -35,24 +40,29 @@ const AddWorkout = ({ addNewTraining }) => {
     }
   };
 
-  const handleFormButton = () => {
+  const handleFormButton = (e) => {
+    e.preventDefault();
     if (formValidation) {
-      const addTraining = addNewTraining({
-        type,
-        description,
-        date,
-        minutes,
-        hours,
-        important,
+      dispatch({
+        value: {
+          id: uuidv4(),
+          type,
+          description,
+          date,
+          minutes,
+          hours,
+          important,
+          finished: false,
+        },
+        type: "ADD",
       });
-      if (addTraining === true) {
-        setType("");
-        setDescription("");
-        setDate(defaultDate);
-        setMinutes("");
-        setHours("");
-        setImportant("");
-      }
+
+      setType("");
+      setDescription("");
+      setDate(defaultDate);
+      setMinutes("");
+      setHours("");
+      setImportant("");
     }
   };
 
