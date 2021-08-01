@@ -10,20 +10,24 @@ const Path = () => {
 
   const welcomeIfLogged = isUserLogged && (
     <span className="login">
-      welcome: <span className="user">{userName}</span>{" "}
+      <span>user:</span> <span className="user">{userName}</span>
     </span>
   );
 
   return (
     <div className="path">
-      <Route path="/" exact render={() => <p>home</p>} />
+      <Route
+        path="/"
+        exact
+        render={() => <div className="pathName">home</div>}
+      />
       <Route
         path="/:page"
         exact
         render={(props) => (
-          <p>
+          <div className="pathName">
             home {">"} {props.match.params.page}
-          </p>
+          </div>
         )}
       />
       {welcomeIfLogged}

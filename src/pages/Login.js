@@ -1,5 +1,6 @@
 import { AppContext } from "../layoutes/AppContext";
 import { useContext, useState } from "react";
+import "../styles/Login.css";
 
 const Login = () => {
   const [inputValue, setInputValue] = useState("");
@@ -7,8 +8,28 @@ const Login = () => {
   const { isUserLogged } = useContext(AppContext);
   const { userName } = useContext(AppContext);
 
-  const logoutInformation = `${userName} click button below for logout`;
-  const loginInformation = "Enter name and password for login";
+  const logoutInformation = `${userName} click below for logout`;
+  const loginInformation = "Login with name and password";
+  const inputs = (handleInputChange) => (
+    <div className="inputsContainer">
+      <input
+        onChange={handleInputChange}
+        id="name"
+        name="name"
+        type="text"
+        placeholder="name"
+        value={inputValue}
+      />
+      <br />
+      <br />
+      <input name="password" type="password" placeholder="password" />
+      <label className="testLabel" htmlFor="password">
+        "test"
+      </label>
+      <br />
+      <br />
+    </div>
+  );
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -24,35 +45,18 @@ const Login = () => {
   };
 
   return (
-    <div>
-      {isUserLogged ? logoutInformation : loginInformation}
-      <br />
-      <br />
-      {!isUserLogged && (
-        <div>
-          <input
-            onChange={handleInputChange}
-            id="name"
-            name="name"
-            type="text"
-            placeholder="name"
-            value={inputValue}
-          />
-          <br />
-          <br />
-          <input name="password" type="password" placeholder="password" />
-          <label htmlFor="password">(use : 'test')</label>
-          <br />
-          <br />
-        </div>
-      )}
+    <div className="loginContainer">
+      <h5 className="loginInfo">
+        {isUserLogged ? logoutInformation : loginInformation}
+      </h5>
+      {!isUserLogged && inputs(handleInputChange)}
       {isUserLogged && (
-        <button className="btn btn-danger btn-sm " onClick={handleLogout}>
+        <button className="btn btn-primary btn-sm " onClick={handleLogout}>
           logout
         </button>
       )}
       {!isUserLogged && (
-        <button className="btn btn-danger btn-sm " onClick={handleLogin}>
+        <button className="btn btn-primary btn-sm " onClick={handleLogin}>
           login{" "}
         </button>
       )}

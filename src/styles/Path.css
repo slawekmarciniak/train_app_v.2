@@ -2,25 +2,26 @@
     display: flex;
     height: 25px;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
-.path p {
+.path {
 
-    font-size: 12px;
+    font-size: 15px;
+    line-height: 20px;
     font-style: italic;
-    margin-left: 18%;
     color: #535c68;
+    padding-left: 120px;
 
 }
 
 span.login {
 
-    font-size: 12px;
+    font-size: 15px;
     font-style: italic;
-    margin-left: 15px;
+    margin-left: 30px;
     color: whitesmoke;
-    margin-right: 100px;
+    letter-spacing: 1.5px;
 }
 
 span.user {
@@ -28,6 +29,7 @@ span.user {
     color: #ffbe76;
     font-size: 15px;
     font-weight: bold;
+    letter-spacing: 1.5px;
 }
 
 

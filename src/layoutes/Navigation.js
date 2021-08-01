@@ -6,7 +6,7 @@ const list = [
   { name: "add workout", path: "/add_workout" },
   { name: "training list", path: "/training_list" },
   { name: "history", path: "/history" },
-  { name: "contact", path: "/contact" },
+  // { name: "contact", path: "/contact" },
   { name: "login", path: "/login" },
 ];
 
