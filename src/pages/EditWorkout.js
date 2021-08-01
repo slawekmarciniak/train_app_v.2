@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../layoutes/AppContext";
 
-const EditWorkout = ({ saveEdit }) => {
-  const { editingWorkout } = useContext(AppContext);
+const EditWorkout = () => {
+  const { editingWorkout, dispatch } = useContext(AppContext);
 
   const [date, setDate] = useState(editingWorkout.date);
   const [description, setDescription] = useState(editingWorkout.description);
@@ -39,23 +39,25 @@ const EditWorkout = ({ saveEdit }) => {
   const handleFormButton = (e) => {
     e.preventDefault();
     if (formValidation) {
-      const edit = saveEdit({
-        id: editingWorkout.id,
-        type,
-        description,
-        date,
-        minutes,
-        hours,
-        important,
+      dispatch({
+        value: {
+          id: editingWorkout.id,
+          type,
+          description,
+          date,
+          minutes,
+          hours,
+          important,
+        },
+        type: "EDIT",
       });
-      if (edit === true) {
-        setType("");
-        setDescription("");
-        setDate("");
-        setMinutes("");
-        setHours("");
-        setImportant("");
-      }
+
+      setType("");
+      setDescription("");
+      setDate("");
+      setMinutes("");
+      setHours("");
+      setImportant("");
     }
   };
 

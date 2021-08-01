@@ -6,6 +6,11 @@ export const AppContext = createContext();
 
 const trainingReducer = (state, action) => {
   switch (action.type) {
+    case "EDIT":
+      let trainingsList = state.filter(
+        (training) => training.id !== action.value.id
+      );
+      return [...trainingsList, action.value];
     case "DELETE":
       console.log("delete");
       return state.filter((training) => training.id !== action.id);
