@@ -1,10 +1,12 @@
 import { Route, Switch } from "react-router-dom";
-import AddWorkout from "../pages/AddWorkout";
-import EditWorkout from "../pages/EditWorkout";
-import History from "../pages/History";
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import TrainingList from "../pages/TrainingList";
+import {
+  AddWorkout,
+  EditWorkout,
+  History,
+  Home,
+  Login,
+  TrainingList,
+} from "../pages";
 
 import "../styles/Pages.css";
 

@@ -1,11 +1,11 @@
 import { Route, Switch } from "react-router-dom";
-import header1 from "../images/header1.jpg";
-import header2 from "../images/header2.jpg";
-import header3 from "../images/header3.jpg";
-import header4 from "../images/header4.jpg";
-import header5 from "../images/header5.jpg";
-import header6 from "../images/header6.jpg";
-import "../styles/Header.css";
+import header1 from "./images/header1.jpg";
+import header2 from "./images/header2.jpg";
+import header3 from "./images/header3.jpg";
+import header4 from "./images/header4.jpg";
+import header5 from "./images/header5.jpg";
+import header6 from "./images/header6.jpg";
+import "./style.css";
 
 const Header = () => {
   return (

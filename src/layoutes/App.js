@@ -4,11 +4,11 @@ import AppProvider from "./AppContext";
 import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Header from "./Header";
+import Header from "../Components/Header";
 import Path from "./Path";
-import Navigation from "./Navigation";
+import Navigation from "../Components/Nav";
 import Pages from "./Pages";
-import Footer from "./Footer";
+import Footer from "../Components/Footer";
 import "../styles/App.css";
 
 class App extends Component {
