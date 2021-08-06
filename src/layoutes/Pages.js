@@ -6,7 +6,7 @@ import {
   Home,
   Login,
   TrainingList,
-} from "../pages";
+} from "pages";
 
 import "../styles/Pages.css";
 
