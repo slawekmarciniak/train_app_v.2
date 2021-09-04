@@ -1,20 +1,9 @@
-# Ultran Training App v.1
+# Ultran Training App v.2
 
-My target is to build CRUD functionality for training app.
+In this version of app i will add more style with material-ui.
+I will hack some material-ui components and use my own styles - for shorter code and better clarity.
+For example i added margin animation to #root component it imitates persistend drawer from MUI with less code.
 
-In this project I use:
-JS,
-React,
-Hooks (useState, useEffect, useRef)
-React Router,
-Data store with React Context & useReducer,
-Basic Bootstrap & self made CSS styles.
-
-I started with basic functionality of app, based on class components and props.
-Then i upgraded app with adding hooks and creating data store with React Context & useReducer.
-In version 2 of my app i will use Redux to create data store.
-I would like to compare react native data store functionality with Redux library.
-
-- [x] 🎥 Preview site :arrow_right: [tap here](https://ultran.github.io/train_app_v.1/)
+Next i will add scss, mobx, type-script and languages.
 
 ...
