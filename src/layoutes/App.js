@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import AppProvider from "./AppContext";
-
 import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import Header from "Components/Header";
 import Path from "./Path";
 import Navigation from "Components/Nav";
@@ -20,11 +18,9 @@ class App extends Component {
             <header>
               <Header />
             </header>
-
             <section className="path">
               <Path />
             </section>
-
             <main>
               <aside>
                 <Navigation />

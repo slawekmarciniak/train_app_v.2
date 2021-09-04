@@ -11,7 +11,6 @@ const list = [
   { name: "add workout", path: "/add_workout" },
   { name: "training list", path: "/training_list" },
   { name: "history", path: "/history" },
-  // { name: "contact", path: "/contact" },
   { name: "login", path: "/login" },
 ];
 
@@ -20,9 +19,18 @@ const Navigation = () => {
 
   const handleHamburger = () => {
     setMenuIsOpen((prev) => !prev);
+    if (!menuIsOpen) {
+      const appDiv = document.querySelector("#root");
+      appDiv.classList.add("menu_open");
+    } else {
+      const appDiv = document.querySelector("#root");
+      appDiv.classList.remove("menu_open");
+    }
   };
   const handleClose = () => {
     setMenuIsOpen(false);
+    const appDiv = document.querySelector("#root");
+    appDiv.classList.remove("menu_open");
   };
 
   const nav = list.map((item) => (
@@ -39,7 +47,8 @@ const Navigation = () => {
       <Drawer
         style={{ backgroundColor: "red" }}
         open={menuIsOpen}
-        variant={"persistent"}
+        variant="persistent"
+        anchor="left"
       >
         <nav className="mainNav">
           <CloseButton handleClose={handleClose} />

@@ -1,4 +1,4 @@
-import TableTraining from "../Components/TableTraining/";
+import TableTraining from "Components/TableTraining/";
 import { useContext } from "react";
 import { AppContext } from "layoutes/AppContext";
 
