@@ -1,6 +1,6 @@
-import Training from "../Components/Training";
+import TableTraining from "../Components/TableTraining/";
 import { useContext } from "react";
-import { AppContext } from "../layoutes/AppContext";
+import { AppContext } from "layoutes/AppContext";
 
 const Home = () => {
   const { state } = useContext(AppContext);
@@ -16,7 +16,7 @@ const Home = () => {
       : "no more workouts for today";
 
   const todaysList = todaysWorkouts.map((training) => (
-    <Training key={training.id} training={training} />
+    <TableTraining key={training.id} training={training} />
   ));
 
   return (

@@ -1,4 +1,9 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Drawer from "@material-ui/core/Drawer";
+import Hamburger from "../Hamburger";
+import CloseButton from "../Buttons";
+
 import "./styles.css";
 
 const list = [
@@ -11,6 +16,15 @@ const list = [
 ];
 
 const Navigation = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState(true);
+
+  const handleHamburger = () => {
+    setMenuIsOpen((prev) => !prev);
+  };
+  const handleClose = () => {
+    setMenuIsOpen(false);
+  };
+
   const nav = list.map((item) => (
     <li key={item.name}>
       <NavLink to={item.path} exact={item.exact && item.exact}>
@@ -21,9 +35,17 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="mainNav">
-        <ul>{nav}</ul>
-      </nav>
+      <Hamburger handleHamburger={handleHamburger} drawerIsOpen={menuIsOpen} />
+      <Drawer
+        style={{ backgroundColor: "red" }}
+        open={menuIsOpen}
+        variant={"persistent"}
+      >
+        <nav className="mainNav">
+          <CloseButton handleClose={handleClose} />
+          <ul>{nav}</ul>
+        </nav>
+      </Drawer>
     </>
   );
 };

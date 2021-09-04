@@ -9,7 +9,7 @@ import Path from "./Path";
 import Navigation from "Components/Nav";
 import Pages from "./Pages";
 import Footer from "Components/Footer";
-import "../styles/App.css";
+import "../sass/app.scss";
 
 class App extends Component {
   render() {

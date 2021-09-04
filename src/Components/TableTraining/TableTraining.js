@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { AppContext } from "../layoutes/AppContext";
+import { AppContext } from "../../layoutes/AppContext";
 import { useHistory } from "react-router-dom";
 
-const Training = (props) => {
+const TableTraining = (props) => {
   const history = useHistory();
   const { id, type, description, date, hours, minutes } = props.training;
   const { dispatch } = useContext(AppContext);
@@ -60,4 +60,4 @@ const Training = (props) => {
   );
 };
 
-export default Training;
+export default TableTraining;

@@ -2,8 +2,6 @@ import { Route } from "react-router-dom";
 import { AppContext } from "./AppContext";
 import { useContext } from "react";
 
-import "../styles/Path.css";
-
 const Path = () => {
   const { isUserLogged } = useContext(AppContext);
   const { userName } = useContext(AppContext);

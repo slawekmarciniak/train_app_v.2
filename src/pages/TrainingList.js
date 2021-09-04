@@ -1,13 +1,13 @@
-import Training from "../Components/Training";
+import TableTraining from "Components/TableTraining/";
 import { useContext } from "react";
-import { AppContext } from "../layoutes/AppContext";
+import { AppContext } from "layoutes/AppContext";
 
 const TrainingList = () => {
   const { state } = useContext(AppContext);
   const active = state.filter((training) => !training.finished);
 
   const activeList = active.map((training) => (
-    <Training key={training.id} training={training} />
+    <TableTraining key={training.id} training={training} />
   ));
 
   return (

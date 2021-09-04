@@ -8,8 +8,6 @@ import {
   TrainingList,
 } from "pages";
 
-import "../styles/Pages.css";
-
 const Pages = () => {
   return (
     <div className="pagesContainer">

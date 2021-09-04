@@ -1,6 +1,5 @@
-import { AppContext } from "../layoutes/AppContext";
+import { AppContext } from "layoutes/AppContext";
 import { useContext, useState } from "react";
-import "../styles/Login.css";
 
 const Login = () => {
   const [inputValue, setInputValue] = useState("");

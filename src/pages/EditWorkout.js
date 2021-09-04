@@ -1,9 +1,8 @@
 import React, { useState, useContext } from "react";
-import { AppContext } from "../layoutes/AppContext";
+import { AppContext } from "layoutes/AppContext";
 
 const EditWorkout = () => {
   const { editingWorkout, dispatch } = useContext(AppContext);
-
   const [date, setDate] = useState(editingWorkout.date);
   const [description, setDescription] = useState(editingWorkout.description);
   const [hours, setHours] = useState(editingWorkout.hours);
@@ -62,12 +61,12 @@ const EditWorkout = () => {
   };
 
   return (
-    <div>
+    <div className="formContainer">
       <h5 className="pageHeader">EDIT WORKOUT</h5>
       <br />
       <form>
         <div className="row">
-          <div className="col-6">
+          <div className="col-12">
             <input
               name="type"
               onChange={handleInputsChange}
@@ -83,7 +82,7 @@ const EditWorkout = () => {
         <br />
 
         <div className="row">
-          <div className="col-3">
+          <div className="col-6">
             <input
               name="hours"
               type="number"
@@ -97,7 +96,7 @@ const EditWorkout = () => {
             />
           </div>
 
-          <div className="col-3">
+          <div className="col-6">
             <input
               name="minutes"
               type="number"
@@ -116,7 +115,7 @@ const EditWorkout = () => {
         <br />
 
         <div className="row">
-          <div className="col-3">
+          <div className="col-6">
             <input
               name="date"
               value={date}
@@ -147,7 +146,7 @@ const EditWorkout = () => {
         <br />
 
         <div className="row">
-          <div className="form-floating descriptionInput col-6">
+          <div className="form-floating descriptionInput col-12">
             <textarea
               name="description"
               value={description}

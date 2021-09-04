@@ -1,13 +1,10 @@
 import React, { useState, useContext } from "react";
-import { AppContext } from "../layoutes/AppContext";
+import { AppContext } from "layoutes/AppContext";
 import { v4 as uuidv4 } from "uuid";
 
 const AddWorkout = () => {
   const { dispatch } = useContext(AppContext);
   const defaultDate = new Date().toISOString().slice(0, 10);
-
-  console.log(defaultDate);
-
   const [date, setDate] = useState(defaultDate);
   const [description, setDescription] = useState("");
   const [hours, setHours] = useState("");
@@ -67,12 +64,12 @@ const AddWorkout = () => {
   };
 
   return (
-    <div>
+    <div className="formContainer">
       <h5 className="pageHeader">new training</h5>
       <br />
       <form>
         <div className="row">
-          <div className="col-6">
+          <div className="col-12">
             <input
               name="type"
               onChange={handleInputsChange}
@@ -88,7 +85,7 @@ const AddWorkout = () => {
         <br />
 
         <div className="row">
-          <div className="col-3">
+          <div className="col-6">
             <input
               name="hours"
               type="number"
@@ -102,7 +99,7 @@ const AddWorkout = () => {
             />
           </div>
 
-          <div className="col-3">
+          <div className="col-6">
             <input
               name="minutes"
               type="number"
@@ -121,7 +118,7 @@ const AddWorkout = () => {
         <br />
 
         <div className="row">
-          <div className="col-3">
+          <div className="col-6">
             <input
               name="date"
               value={date}
@@ -152,7 +149,7 @@ const AddWorkout = () => {
         <br />
 
         <div className="row">
-          <div className="form-floating descriptionInput col-6">
+          <div className="form-floating descriptionInput col-12">
             <textarea
               name="description"
               value={description}

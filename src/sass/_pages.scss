@@ -1,0 +1,27 @@
+
+
+section.page {
+    flex-grow: 1;
+}
+
+
+.pagesContainer {
+    padding: 10px 50px 10px 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+p.quote {
+    font-style: italic;
+    font-size: 12px;
+}
+
+.pageHeader {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
