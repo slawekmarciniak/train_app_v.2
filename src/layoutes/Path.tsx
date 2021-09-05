@@ -1,8 +1,13 @@
+import * as React from 'react';
+import { FC } from 'react';
+
 import { Route } from "react-router-dom";
 import { AppContext } from "./AppContext";
 import { useContext } from "react";
 
-const Path = () => {
+import Hej from "./Hej";
+
+const Path: FC = () => {
   const { isUserLogged } = useContext(AppContext);
   const { userName } = useContext(AppContext);
 
@@ -14,6 +19,7 @@ const Path = () => {
 
   return (
     <div className="path">
+      <Hej></Hej>
       <Route
         path="/"
         exact
