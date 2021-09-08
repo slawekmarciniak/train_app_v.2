@@ -20,16 +20,16 @@ const Navigation = () => {
   const handleHamburger = () => {
     setMenuIsOpen((prev) => !prev);
     if (!menuIsOpen) {
-      const appDiv = document.querySelector("#root");
+      const appDiv: any = document.querySelector("#root");
       appDiv.classList.add("menu_open");
     } else {
-      const appDiv = document.querySelector("#root");
+      const appDiv: any = document.querySelector("#root");
       appDiv.classList.remove("menu_open");
     }
   };
-  const handleClose = () => {
+  const handleClose = (): void => {
     setMenuIsOpen(false);
-    const appDiv = document.querySelector("#root");
+    const appDiv: any = document.querySelector("#root");
     appDiv.classList.remove("menu_open");
   };
 

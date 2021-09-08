@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import { AppContext } from "./AppContext";
 import { useContext } from "react";
 
-import Hej from "./Hej";
+
 
 const Path: FC = () => {
   const { isUserLogged } = useContext(AppContext);
@@ -19,7 +19,7 @@ const Path: FC = () => {
 
   return (
     <div className="path">
-      <Hej></Hej>
+     
       <Route
         path="/"
         exact

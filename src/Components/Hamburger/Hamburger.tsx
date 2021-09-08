@@ -1,6 +1,13 @@
+import {FC} from 'react'
+
 import "./style.css";
 
-const Hamburger = ({ handleHamburger, drawerIsOpen }) => {
+interface HamburgerProps {
+  handleHamburger: () => void;
+  drawerIsOpen: boolean;
+}
+
+const Hamburger: FC<HamburgerProps> = ({ handleHamburger, drawerIsOpen }) => {
   return (
     <div
       onClick={handleHamburger}

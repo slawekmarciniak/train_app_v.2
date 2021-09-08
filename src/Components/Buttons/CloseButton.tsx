@@ -1,8 +1,16 @@
 import Button from "@material-ui/core/Button";
+import * as React from 'react';
+import { FunctionComponent as FC } from 'react';
+
 import CloseIcon from "@material-ui/icons/Close";
+
 import "./style.css";
 
-const CloseButton = ({ handleClose }) => {
+interface  CloseButtonProps {
+  handleClose: () => void,
+}
+
+const CloseButton: FC<CloseButtonProps> = ({ handleClose }) => {
   return (
     <div className="buttonContainer">
       <Button
@@ -21,5 +29,7 @@ const CloseButton = ({ handleClose }) => {
     </div>
   );
 };
+
+
 
 export default CloseButton;

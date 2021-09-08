@@ -1,6 +1,7 @@
-import "./style.css";
 
-const Footer = () => {
+
+
+const Footer: React.FC = () => {
   return (
     <p>
       from Ultran with <span className="peace">&#9774;</span>{" "}
