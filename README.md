@@ -1,4 +1,4 @@
-# Ultran Training App v.2
+# Ultran Training App v.2 - CRUD APP
 
 In progress...
 
@@ -10,4 +10,4 @@ Add TypeScript
 
 Add REDUX instead of React Context
 
-Add Material UI and change default components with my own styles (For example i added margin animation to #root component. It imitates persistend drawer component from MUI with less code.
+Add Material UI and change default components with my own styles (For example i added margin animation to #root component. It imitates 'persistend drawer' component from MUI with less code.
